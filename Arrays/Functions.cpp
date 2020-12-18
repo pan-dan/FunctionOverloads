@@ -25,7 +25,7 @@ void FillRand(double arr[], const int n, int minRand, int maxRand)
 void FillRand(int arr[ROWS][COLS], const int m, const int n)
 {
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
 		{
@@ -136,4 +136,30 @@ void Sort(double arr[], const int n)
 			}
 		}
 	}
+}
+
+void Sort(int arr[ROWS][COLS], const int m, const int n)
+{
+	int iterations = 0;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			for (int k = 0; k < m; k++)
+			{
+				for (int l = 0; l < n; l++)
+				{
+					iterations++;
+					if (arr[i][j] < arr[k][l])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+					}
+				}
+			}
+		}
+	}
+
+	cout << "Количество итераций: " << iterations << endl;;
 }

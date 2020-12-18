@@ -32,7 +32,7 @@ double maxValueIn(double arr[], const int n);
 
 void Sort(int arr[], const int n);
 void Sort(double arr[], const int n);
-
+void Sort(int arr[ROWS][COLS], const int m, const int n);
 
 
 
